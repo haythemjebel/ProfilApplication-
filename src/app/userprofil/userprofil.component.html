@@ -1,0 +1,56 @@
+<div class="uk-padding">
+    <div class="uk-card uk-card-default">
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                    <img class="uk-border-circle" width="200" height="200" [attr.src]="data.image">
+                </div>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">Email : {{email}}</h3>
+                    <input type="file" (change)="upload($event)" accept=".png,.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body">
+            <p>Name : {{data.name}}</p>
+            <p>Phone : {{data.phone}}</p>
+            <p>Job : {{data.job}}</p>
+            <p>Address : {{data.address}}</p>
+            <p>City : {{data.city}}</p>
+            <p>Age : {{data.age}}</p>
+        </div>
+        <div class="uk-card-footer">
+            <a class="uk-button uk-button-text uk-text-large" uk-toggle="target: #modal-example">Edit</a>
+
+            <!-- This is the modal -->
+            <div id="modal-example" uk-modal>
+                <div class="uk-modal-dialog uk-modal-body">
+                    <fieldset class="uk-fieldset">
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Your name" name="name" [(ngModel)]="data.name">
+                        </div>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Your phone" name="phone" [(ngModel)]="data.phone">
+                        </div>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Your Age" name="age" [(ngModel)]="data.age">
+                        </div>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Your address" name="address" [(ngModel)]="data.address">
+                        </div>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Your city" name="city" [(ngModel)]="data.city">
+                        </div>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Your job" name="job" [(ngModel)]="data.job">
+                        </div>
+                    </fieldset>
+                    <p class="uk-text-right">
+                        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                        <button class="uk-button uk-button-primary" type="button" (click)="OnEdit()">Save</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
